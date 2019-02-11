@@ -1,0 +1,472 @@
+
+Python
+Python
+Logo jÄzyka
+Logo jÄzyka
+Pojawienie siÄ	1991
+Paradygmat	wieloparadygmatowy (obiektowy, imperatywny, funkcyjny)
+Typowanie	dynamiczne
+Implementacje	CPython, IronPython, Jython, PyPy
+Pochodne	Stackless Python, Cython
+Aktualna wersja stabilna	3.6.5/ 29 marca 2018; 11 dni temu[1]
+2.7.14 / 16 wrzeĹnia 2017; 7 miesiÄcy temu[1]
+TwĂłrca	Guido van Rossum
+Licencja	PSFL
+Platforma sprzÄtowa	wieloplatformowy
+Platforma systemowa	wieloplatformowy
+KsiÄĹźki w Wikibooks	KsiÄĹźki w Wikibooks
+Commons	Multimedia w Wikimedia Commons
+Strona internetowa
+Python â jÄzyk programowania wysokiego poziomu ogĂłlnego przeznaczenia[2], o rozbudowanym pakiecie bibliotek standardowych[3], ktĂłrego ideÄ przewodniÄ jest czytelnoĹÄ i klarownoĹÄ kodu ĹşrĂłdĹowego. Jego skĹadnia cechuje siÄ przejrzystoĹciÄ i zwiÄzĹoĹciÄ[4][5].
+
+Python wspiera rĂłĹźne paradygmaty programowania: obiektowy, imperatywny oraz w mniejszym stopniu funkcyjny. Posiada w peĹni dynamiczny system typĂłw i automatyczne zarzÄdzanie pamiÄciÄ, bÄdÄc w tym podobnym do jÄzykĂłw Perl, Ruby, Scheme czy Tcl. Podobnie jak inne jÄzyki dynamiczne jest czÄsto uĹźywany jako jÄzyk skryptowy. Interpretery Pythona sÄ dostÄpne na wiele systemĂłw operacyjnych.
+
+Python rozwijany jest jako projekt Open Source zarzÄdzany przez Python Software Foundation, ktĂłra jest organizacjÄ non-profit. StandardowÄ implementacjÄ jÄzyka jest CPython (napisany w C), ale istniejÄ teĹź inne, np. Jython (napisany w Javie), CLPython napisany w Common Lisp, IronPython (na platformÄ .NET) i PyPy (napisany w Pythonie, zob. bootstrap).
+
+Spis treĹci
+1	RozwĂłj jÄzyka
+2	Filozofia Pythona
+3	Typy i struktury danych
+3.1	Wybrane wbudowane typy danych[7]
+3.2	Kolekcje
+3.3	Wszystko jest obiektem
+3.4	Emulowanie typĂłw, przeciÄĹźanie operatorĂłw, wywoĹywanie jako funkcje
+3.5	Zmienna liczba argumentĂłw funkcji
+4	SkĹadnia
+4.1	Struktura przez wciÄcia
+4.2	Komentarze
+4.3	Programowanie funkcyjne
+4.3.1	Lambda
+4.3.2	Generatory
+4.4	Operatory logiczne
+4.5	ObsĹuga wyjÄtkĂłw
+4.6	Dekoratory
+5	Biblioteka standardowa
+5.1	Standardy dla bibliotek âzewnÄtrznychâ
+6	Inne cechy
+7	Zobacz teĹź
+8	Przypisy
+9	Linki zewnÄtrzne
+RozwĂłj jÄzyka
+Pythona stworzyĹ we wczesnych latach 90. Guido van Rossum â jako nastÄpcÄ jÄzyka ABC, stworzonego w Centrum voor Wiskunde en Informatica (CWI â Centrum Matematyki i Informatyki w Amsterdamie). Van Rossum jest gĹĂłwnym twĂłrcÄ Pythona, choÄ spory wkĹad w jego rozwĂłj pochodzi od innych osĂłb. Z racji kluczowej roli, jakÄ van Rossum peĹni przy podejmowaniu waĹźnych decyzji projektowych, czÄsto okreĹla siÄ go przydomkiem âBenevolent Dictator for Lifeâ (BDFL).
+
+Nazwa jÄzyka nie pochodzi od zwierzÄcia, jak moĹźna przypuszczaÄ. Python pochodzi od serialu komediowego emitowanego w latach siedemdziesiÄtych przez BBC - âMonty Pythonâs Flying Circusâ (LatajÄcy Cyrk Monty Pythona). Projektant, bÄdÄc fanem serialu i poszukujÄc nazwy krĂłtkiej, unikalnej i nieco tajemniczej, uznaĹ tÄ za ĹwietnÄ[6].
+
+Wersja 1.2 byĹa ostatniÄ wydanÄ przez CWI. Od 1995 roku Van Rossum kontynuowaĹ pracÄ nad Pythonem w Corporation for National Research Initiatives (CNRI) w Reston w Wirginii, gdzie wydaĹ kilka wersji Pythona, do 1.6 wĹÄcznie. W 2000 roku van Rossum i zespĂłĹ pracujÄcy nad rozwojem jÄdra Pythona przenieĹli siÄ do BeOpen.com by zaĹoĹźyÄ zespĂłĹ BeOpen PythonLabs. PierwszÄ i jedynÄ wersjÄ wydanÄ przez BeOpen.com byĹ Python 2.0.
+
+Po wydaniu wersji 1.6 i opuszczeniu CNRI przez van Rossuma, ktĂłry zajÄĹ siÄ programowaniem komercyjnym, uznano za wysoce poĹźÄdane, by Pythona moĹźna byĹo uĹźywaÄ z oprogramowaniem dostÄpnym na licencji GPL. CNRI i Free Software Foundation (FSF) podjÄĹy wspĂłlny wysiĹek w celu odpowiedniej modyfikacji licencji Pythona. Wersja 1.6.1 byĹa zasadniczo identyczna z wersjÄ 1.6, z wyjÄtkiem kilku drobnych poprawek oraz licencji, dziÄki ktĂłrej pĂłĹşniejsze wersje mogĹy byÄ zgodne z licencjÄ GPL. Python 2.1 pochodzi zarĂłwno od wersji 1.6.1, jak i 2.0.
+
+Po wydaniu Pythona 2.0 przez BeOpen.com Guido van Rossum i inni programiĹci z PythonLabs przeszli do Digital Creations. CaĹa wĹasnoĹÄ intelektualna dodana od tego momentu, poczÄwszy od Pythona 2.1 (wraz z wersjami alpha i beta), jest wĹasnoĹciÄ Python Software Foundation (PSF), niedochodowej organizacji wzorowanej na Apache Software Foundation.
+
+Filozofia Pythona
+Python realizuje jednoczeĹnie kilka paradygmatĂłw. Podobnie do C++, a w przeciwieĹstwie do Smalltalka nie wymusza jednego stylu programowania, pozwalajÄc na stosowanie rĂłĹźnych. W Pythonie moĹźliwe jest programowanie obiektowe, programowanie strukturalne i programowanie funkcyjne. Typy sprawdzane sÄ dynamicznie, a do zarzÄdzania pamiÄciÄ stosuje siÄ garbage collection.
+
+ChoÄ w jego popularyzacji kĹadzie siÄ nacisk na rĂłĹźnice w stosunku do Perla, Python jest pod wieloma wzglÄdami do niego podobny. JednakĹźe projektanci Pythona odrzucili zĹoĹźonÄ skĹadniÄ Perla na rzecz bardziej oszczÄdnej i â ich zdaniem â bardziej czytelnej. Mimo Ĺźe podobnie do Perla, Python jest czasem klasyfikowany jako jÄzyk skryptowy, wykorzystuje siÄ go do tworzenia duĹźych projektĂłw jak serwer aplikacji Zope, system wymiany plikĂłw Mojo Nation czy nawet oprogramowanie klasy ERP â OpenERP.
+
+Typy i struktury danych
+W Pythonie wartoĹci, a nie zmienne, posiadajÄ typ â tak wiÄc Python jest jÄzykiem z typami dynamicznymi, podobnie jak Lisp, a w przeciwieĹstwie do Javy. Wszystkie wartoĹci przekazywane sÄ przez referencjÄ.
+
+W porĂłwnaniu z innymi jÄzykami z typami dynamicznymi Python sprawdza typy w umiarkowanym stopniu. Nie jest ani tak liberalny, jak Perl, ani tak restrykcyjny jak OCaml. Dla typĂłw numerycznych zdefiniowana jest automatyczna konwersja, tak wiÄc moĹźliwe jest np. mnoĹźenie liczby zespolonej przez liczbÄ caĹkowitÄ typu long bez rzutowania. Jednak w przeciwieĹstwie do Perla nie ma np. automatycznej konwersji pomiÄdzy napisami i liczbami; liczba nie jest prawidĹowym argumentem dla operacji napisowej.
+
+Python oferuje szeroki zakres podstawowych typĂłw danych -- w tym typy liczbowe (caĹkowite, zmiennoprzecinkowe, zespolone) oraz kolekcje.
+
+Wybrane wbudowane typy danych[7]
+Typ	Opis	PrzykĹad
+Python 3: str
+Python 2: unicode	Napis w Unikodzie (niezmienny)	Python 3: 'Wikipedia' lub "Wikipedia"
+
+Python 2: u'Wikipedia'lub u"Wikipedia"
+Python 3: bytes
+Python 2: str	Napis w ASCII (niezmienny)	Python 3: b'Wikipedia' lub b"Wikipedia"
+
+Python 2: 'Wikipedia' lub "Wikipedia"
+list	Lista (zmienna, zawartoĹÄ, dĹugoĹÄ)	[4.0, 'string', True]
+tuple	Krotka (niezmienna)	(4.0, 'string', True)
+set	ZbiĂłr rĂłĹźnych elementĂłw (zmienny)	Python 3: {4.0, 'string', True}
+Python 2: set([4.0, 'string', True])
+frozenset	ZbiĂłr rĂłĹźnych elementĂłw (niezmienny)	Python 3: frozenset({4.0, 'string', True})
+Python 2: frozenset([4.0, 'string', True])
+dict	SĹownik, czyli tablica asocjacyjna (zmienny).	{'key1': 1.0, 3: False}
+int (oraz long w Python 2)	Liczba caĹkowita o dowolnej wartoĹci	42
+float	Liczba zmiennoprzecinkowa	3.1415927
+complex	Liczba zespolona	3+2.7j
+bool	Prawda lub faĹsz	True
+False
+type(None)	Nic (odpowiednik null)	None
+Kolekcje
+CzÄĹÄ wyĹźej wymienionych typĂłw to kolekcje.
+
+Listy, krotki (ang. tuple) i napisy sÄ sekwencjami, w zwiÄzku z czym udostÄpniajÄ pewnÄ liczbÄ wspĂłlnych operacji (np. w identyczny sposĂłb moĹźna iterowaÄ po kolejnych znakach napisu jak po elementach listy, czy teĹź wskazywaÄ elementy za pomocÄ indeksĂłw). Listy to tablice o zmiennej liczbie elementĂłw (z moĹźliwoĹciÄ ich usuwania, dodawania i podmiany), zaĹ krotki to tablice o staĹej liczbie elementĂłw (bez moĹźliwoĹci usuwania, dodawania i podmiany).
+
+Python obsĹuguje typowy zestaw operacji na ĹaĹcuchach tekstowych. ĹaĹcuchy w Pythonie sÄ niezmienne. KaĹźda operacja, ktĂłra zmieniĹaby zawartoĹÄ napisu (np. zamiana maĹych liter na wielkie) zwrĂłci nowy napis, pozostawiajÄc oryginalny napis bez zmian.
+
+Innymi typami sÄ kolekcje nieuporzÄdkowane: sĹowniki (ang. dict od dictionary â znane w innych jÄzykach jako odwzorowania (ang. map) lub tablice asocjacyjne) oraz zbiory (zmienny set i niezmienny frozenset). SĹownikowe klucze oraz elementy zbiorĂłw muszÄ byÄ tzw. obiektami haszowalnymi (posiadajÄcymi metodÄ __hash__()) â co na ogĂłĹ oznacza, Ĺźe muszÄ byÄ niezmienne (niemutowalne); np. kluczem sĹownika nie moĹźe byÄ lista ani zbiĂłr zmienny (typu set) â moĹźe zaĹ byÄ krotka bÄdĹş zbiĂłr niezmienny (typu frozenset), o ile zawiera wyĹÄcznie elementy niezmienne.
+
+NaleĹźy dodaÄ, Ĺźe podstawowe kolekcje w standardowej implementacji Pythona w C sÄ wysoce zoptymalizowane pod kÄtem szybkoĹci przeszukiwania, sortowania itp.
+
+Wszystko jest obiektem
+System typĂłw w Pythonie jest silnie powiÄzany z systemem klas. ChociaĹź typy wbudowane nie sÄ wĹaĹciwie klasami, klasa moĹźe dziedziczyÄ z dowolnego typu. MoĹźna wiÄc dziedziczyÄ klasy z napisĂłw czy sĹownikĂłw, a nawet z liczb caĹkowitych. Ponadto moĹźliwe jest dziedziczenie wielokrotne.
+
+JÄzyk umoĹźliwia rozlegĹÄ introspekcjÄ typĂłw i klas. Typy moĹźna odczytywaÄ i porĂłwnywaÄ â podobnie, jak w Smalltalku, typy (opisy typĂłw) teĹź sÄ typem. Atrybuty obiektu moĹźna pobraÄ jako sĹownik.
+
+W Pythonie nie ma enkapsulacji, jak to ma miejsce w C++ czy Javie, istniejÄ jednak mechanizmy pozwalajÄce osiÄgnÄÄ zbliĹźony efekt. JednoczeĹnie Python znaczÄco uĹatwia introspekcjÄ obiektĂłw, tak wiÄc wĹaĹciwe uĹźycie atrybutĂłw obiektu pozostawia siÄ programiĹcie.
+
+Dodatkowo kaĹźda funkcja, klasa i moduĹ mogÄ zostaÄ opatrzone dokumentacjÄ w kodzie ĹşrĂłdĹowym. Nie posiada ona wprawdzie rozbudowanych funkcji podobnych do javadoc, ale jest dostÄpna w czasie wykonania programu, a wiÄc i w trybie interaktywnym.
+
+Emulowanie typĂłw, przeciÄĹźanie operatorĂłw, wywoĹywanie jako funkcje
+Python pozwala dopasowywaÄ wĹasnoĹci danej klasy w szerokim zakresie. ImplementujÄc odpowiednie metody moĹźna sprawiÄ, by obiekty danej klasy zachowywaĹy siÄ jak kolekcje, liczby, a nawet funkcje.
+
+PrzykĹad:
+
+class Emulator:
+
+    def __call__(self, x):
+        print("Ten Emulator wywoĹano jako funkcjÄ z parametrem x = {0}".format(x))
+
+    def __getitem__(self, key):
+        return(str(key) + "-ty element w kontenerze klasy Emulator")
+
+
+e = Emulator()
+e('abc')
+e(123)
+print(e['def'])
+print(e[456])
+Uruchomienie powyĹźszego kodu da nastÄpujÄcy rezultat:
+
+Ten Emulator wywoĹano jako funkcjÄ z parametrem x = abc
+Ten Emulator wywoĹano jako funkcjÄ z parametrem x = 123
+def-ty element w kontenerze klasy Emulator
+456-ty element w kontenerze klasy Emulator
+Zmienna liczba argumentĂłw funkcji
+MoĹźliwe jest tworzenie funkcji ze zmiennÄ liczbÄ argumentĂłw, argumentami o wartoĹciach domyĹlnych (podobnie jak w C++ lub C#), a takĹźe wywoĹywanie funkcji z uĹźyciem argumentĂłw nazwanych, z podaniem nazw parametrĂłw. PrzykĹad:
+
+def pokaz_argumenty(x, y, *args, **kwargs):
+    print("x=%s, y=%s" % (x, y))
+    print("Argumenty pozycyjne:", end=' ')
+    for aa in args:
+        print(aa, end=' ')
+    print("\nArgumenty nazwane:", end=' ')
+    for kk in kwargs:
+        print("%s=%s" % (kk, kwargs[kk]), end=' ')
+
+
+pokaz_argumenty('abc', 123, 456, 'def', k=789, m='ghi')
+Uruchomienie powyĹźszego kodu da nastÄpujÄcy rezultat:
+
+x=abc, y=123
+Argumenty pozycyjne: 456 def
+Argumenty nazwane: k=789 m=ghi
+SkĹadnia
+Czytanie kodu zajmuje wielokrotnie wiÄcej czasu niĹź pisanie, a czytelny program moĹźna Ĺatwiej zrozumieÄ i rozwijaÄ. Python zostaĹ zaprojektowany tak, by zapewniÄ moĹźliwie duĹźÄ czytelnoĹÄ kodu ĹşrĂłdĹowego. Posiada prosty ukĹad tekstu, uĹźywa wciÄÄ lub angielskich sĹĂłw tam, gdzie inne jÄzyki korzystajÄ ze znakĂłw interpunkcyjnych i posiada zdecydowanie mniej konstrukcji skĹadniowych, niĹź wiele jÄzykĂłw strukturalnych, takich jak C, Perl czy Pascal.
+
+Dla czytelnoĹci, w Pythonie wystÄpujÄ tylko dwa rodzaje pÄtli: for, w ktĂłrej iteracja odbywa siÄ po elementach listy (jak w perlowym foreach), oraz while, ktĂłra jest powtarzana, dopĂłki warunek logiczny jest speĹniony. Python nie posiada skĹadni for w stylu C, do...while, ani perlowego until, choÄ oczywiĹcie moĹźna uzyskaÄ ich zĹoĹźone odpowiedniki. Podobnie, Python ogranicza zestaw instrukcji wyboru do if...elif...else â wyeliminowano zĹoĹźone instrukcje wyboru, czy instrukcje skokĂłw, ktĂłre w innych jÄzykach szczegĂłlnie gmatwajÄ czytelnoĹÄ.
+
+Od wersji 2.5 Python posiada operator warunkowy, analogiczny do warunek ? wartoĹÄ1 : wartoĹÄ2 znanego z C i Javy. SkĹadnia: wartoĹÄ1 if warunek else wartoĹÄ2.
+
+Struktura przez wciÄcia
+CechÄ wyrĂłĹźniajÄcÄ Pythona spoĹrĂłd innych jÄzykĂłw jest stosowanie wciÄÄ do wydzielania blokĂłw kodu. Jest to cecha unikatowa wĹrĂłd powszechnie stosowanych jÄzykĂłw programowania, jako pierwsza rzucajÄca siÄ w oczy programistom niepiszÄcym w Pythonie.
+
+W jÄzykach programowania wywodzÄcych strukturÄ blokowÄ od Algola (niekoniecznie bezpoĹrednio) â np. Pascalu, C, czy Perlu â bloki kodu zaznaczane sÄ klamrami lub sĹowami kluczowymi (C i Perl uĹźywajÄ { }, Pascal uĹźywa begin i end). JednakĹźe we wszystkich tych jÄzykach programiĹci tradycyjnie stosujÄ wciÄcia, by wyrĂłĹźniÄ bloki w otaczajÄcym kodzie.
+
+Natomiast Python dziedziczy cechÄ mniej znanego jÄzyka ABC â zamiast interpunkcji czy sĹĂłw kluczowych uĹźywa samych wciÄÄ do zaznaczania blokĂłw. WyjaĹniÄ to moĹźna na prostym przykĹadzie zamieszczonym poniĹźej. Przedstawiona jest w nim funkcja liczÄca silniÄ w C i w Pythonie:
+
+silnia w C (zapisana bez wciÄÄ):
+
+int silnia(int x) {
+    if (x == 0) return 1;
+    else return x * silnia(x-1);
+}
+silnia w Pythonie:
+
+def silnia(x):
+    if x == 0:
+        return 1
+    else:
+        return x * silnia(x-1)
+Dla niektĂłrych programistĂłw przyzwyczajonych do jÄzykĂłw stylistycznie wzorowanych na Algolu, gdzie spacja nie ma znaczenia skĹadniowego, moĹźe to byÄ mylÄce. Spotyka siÄ czasem niepochlebne porĂłwnanie do sztywnego systemu kolumnowego kart perforowanych stosowanego w czasach fortranowych.
+
+Istotnie, w swoim czasie moĹźliwoĹÄ stosowania zapisu, w ktĂłrym decydujÄce byĹy jedynie symbole, byĹa duĹźym postÄpem. Jednak dla programistĂłw piszÄcych w Pythonie stosowanie skĹadniowo znaczÄcych wciÄÄ jest po prostu przedĹuĹźeniem konwencji, ktĂłra i tak jest stosowana np. w C. Zwolennicy tego jÄzyka zwracajÄ takĹźe uwagÄ na wadÄ âswobodnejâ skĹadni, polegajÄcÄ na tym, Ĺźe skoro wciÄcia kodu sÄ ignorowane, nie moĹźna wymusiÄ jednej dobrej konwencji (stÄd teĹź konflikty miÄdzy programistami, dotyczÄce stosowania spacji (i rĂłĹźnej ich liczby) lub tabulatorĂłw, tzw. indentation wars). NieprawidĹowo wciÄty kod moĹźe byÄ mylÄcy, gdyĹź czytajÄcy go programista i kompilator mogÄ go rĂłĹźnie zinterpretowaÄ.
+
+Komentarze
+Komentarze zaczynajÄ siÄ od znaku â#â i koĹczÄ z koĹcem wiersza. Komentarze wieloliniowe moĹźna wstawiaÄ w postaci wielowierszowych stringĂłw (ograniczonych przez """ lub ''') bez Ĺźadnych dziaĹaĹ (np. przypisaĹ); stringi te nie sÄ traktowane jako wyraĹźenia przez interpreter.
+
+Wielowierszowy string umieszczony w pierwszej linii ciaĹa funkcji lub klasy albo na poczÄtku moduĹu, traktowany jest jako tzw. docstring (napis dokumentacyjny) dla tegoĹź obiektu. System dokumentacji Pythona moĹźe automatycznie tworzyÄ sformatowanÄ dokumentacjÄ z docstringĂłw, dajÄc w ten sposĂłb ograniczonÄ wersjÄ literate programming. DokumentacjÄ moĹźna przeglÄdaÄ w trybie interaktywnym interpretera za pomocÄ funkcji help lub z poziomu wiersza poleceĹ za pomocÄ skryptu pydoc.
+
+Programowanie funkcyjne
+InnÄ cechÄ Pythona jest dostÄpnoĹÄ skĹadni funkcyjnej. Jak moĹźna oczekiwaÄ, upraszcza to znacznie obrĂłbkÄ list i innych kolekcji. JednÄ z takich konstrukcji jest tzw. lista skĹadana (ang. list comprehension), przejÄte z funkcjonalnego Haskella, jak w przedstawionym poniĹźej przykĹadzie obliczania piÄciu pierwszych potÄg dwĂłjki:
+
+liczby = [1, 2, 3, 4, 5]
+potegi_dwojki = [2**n for n in liczby]
+Za pomocÄ list skĹadanych moĹźna elegancko wyraziÄ algorytm quicksort, chociaĹź taka jego implementacja jest maĹo wydajna:
+
+def qsort(L):
+    if L == []:
+        return []
+    return qsort([x for x in L[1:] if x < L[0]]) + L[0:1] + \
+        qsort([x for x in L[1:] if x >= L[0]])
+WykorzystujÄc programowanie funkcyjne moĹźna skrĂłciÄ implementacjÄ silni do jednolinijkowca bez uciekania siÄ do rekurencji. W poniĹźszym przykĹadzie uĹźyto operacji redukcji listy. PrzykĹad korzysta ze skĹadni Pythona z rodziny 2.7 oraz 3.0:
+
+from functools import reduce
+
+def silnia_f(n):
+    return int(reduce(lambda x, y: x*y, list(range(2, n+1)) or [1]))
+Lambda
+Nieco mylÄce dla zwolennikĂłw programowania funkcyjnego moĹźe byÄ sĹowo kluczowe lambda. Bloki lambda mogÄ zawieraÄ jedynie wyraĹźenia, nie instrukcje. Nie sÄ one wiÄc najbardziej ogĂłlnym sposobem tworzenia funkcji. Zamiast tego moĹźna zdefiniowaÄ i zwrĂłciÄ funkcjÄ uĹźywajÄc nazwy w zasiÄgu lokalnym, jak w poniĹźszym przykĹadzie prostej funkcji generujÄcej innÄ funkcjÄ (ang. curry):
+
+def zbuduj_sumator(x):
+    def temp(y):
+        print( "{0} + {1} = {2}".format(x, y, x+y) )
+    return temp
+FunkcjÄ tÄ moĹźna zaimplementowaÄ takĹźe uĹźywajÄc zagnieĹźdĹźonych wyraĹźeĹ lambda tak, jak to siÄ robi w Scheme. W pythonie 2 wymaga to obejĹcia ograniczeĹ pythonowej lambdy przez zdefiniowanie funkcji obudowujÄcej instrukcjÄ print:
+
+def drukuj(obj):
+    print obj
+
+zbuduj_sumator = \
+    lambda x : lambda y : \
+        drukuj( "{0} + {1} = {2}".format(x, y, x+y) )
+Oba warianty funkcji zbuduj_sumator zachowujÄ siÄ identycznie: dla podanej liczby x zwracajÄ funkcjÄ, ktĂłra dla podanej liczby y wydrukuje wyraĹźenie arytmetyczne. ChoÄ pierwszy styl jest czÄĹciej spotykany, drugi moĹźe byÄ czytelniejszy dla programistĂłw wyspecjalizowanych w programowaniu funkcyjnym.
+
+Unikalne cechy pythonowych operatorĂłw logicznych and i or dajÄ jeszcze jednÄ unikalnÄ moĹźliwoĹÄ programowania funkcyjnego. Przy wykorzystaniu tych dwĂłch operatorĂłw moĹźna w wyraĹźeniach lambda zaimplementowaÄ dowolne sterowanie przebiegiem [1]. Wykorzystuje siÄ to zwykle tylko do stosunkowo prostych konstrukcji (patrz rozdziaĹ o operatorach logicznych).
+
+Generatory
+Generatory sÄ w Pythonie mechanizmem leniwej ewaluacji funkcji, ktĂłra w przeciwnym razie musiaĹaby zwracaÄ obciÄĹźajÄcÄ pamiÄÄ lub kosztownÄ w obliczaniu listÄ. Stosowanie generatorĂłw jest podobne do strumieni w Scheme.
+
+PrzykĹad ze strony domowej Pythona 2:
+
+ def generuj_calkowite(N):
+     for i in xrange(N):
+         yield i
+MoĹźna teraz uĹźyÄ tego generatora:
+
+ for i in generuj_calkowite(N):
+     print i
+Przed wykonaniem drugiego fragmentu kodu naleĹźy oczywiĹcie zdefiniowaÄ zmiennÄ N.
+
+Definicja generatora przypomina definicjÄ funkcji, ale zamiast sĹowa kluczowego return uĹźywa siÄ yield. JednakowoĹź generator jest obiektem przechowujÄcym stan, mogÄcym wielokrotnie wchodziÄ do i opuszczaÄ ten sam dynamiczny zakres. WywoĹanie generatora moĹźe byÄ uĹźyte zamiast listy lub innej struktury, po ktĂłrej elementach bÄdziemy iterowaÄ. Za kaĹźdym razem, gdy pÄtla for w powyĹźszym przykĹadzie potrzebuje nastÄpnego elementu, wywoĹywany jest generator, ktĂłry daje nastÄpny element.
+
+W wersji 2.4 dodano wyraĹźenia generatorowe (ang. generator expressions), analogiczne do listy skĹadanej. Zapis:
+
+ gen_kwadratow = (i**2 for i in range(5))
+jest odpowiednikiem:
+
+ def gen_kwadratow():
+     for i in range(5):
+         yield i**2
+Operatory logiczne
+W Pythonie jako faĹsz logiczny traktuje siÄ:
+
+liczbÄ zero (0, 0.0, 0j itp.)
+False
+None (null)
+puste kolekcje ([], (), {}, set() itp.)
+puste napisy ("", """""")
+w Pythonie 2 â obiekty posiadajÄce metodÄ __nonzero__(), jeĹli zwraca ona False lub 0
+w Pythonie 3 â obiekty posiadajÄce metodÄ __bool__(), jeĹli zwraca ona False
+Wszystko inne jest prawdÄ logicznÄ.
+
+Operatory and i or zwracajÄ wartoĹÄ ostatnio obliczonego wyraĹźenia, np. âx==5 or 3â zwrĂłci 3. W Pythonie czÄsto pisze siÄ instrukcje w rodzaju print p or q, by wykorzystaÄ tÄ cechÄ.
+
+WartoĹci logiczne zwracane przez operatory porĂłwnania (==, >, !=, is itp.), operator zawierania (in) oraz operator negacji (not) reprezentowane sÄ przez obiekty True i False. Gdyby wiÄc w powyĹźszym przykĹadzie kolejnoĹÄ wyraĹźeĹ zamieniÄ na â3 and x==5â, zwrĂłcona zostaĹaby wartoĹÄ True, gdyĹź tak ewaluowane jest x==5. Operatory porĂłwnania moĹźna ĹÄczyÄ, np. â-1 < x < 0â zwrĂłci True dla x z przedziaĹu (-1, 0) â tak, jak w zapisie matematycznym, a inaczej niĹź np. w C++.
+
+Od Pythona 2.3 True i False sÄ wbudowanymi obiektami typu bool. WczeĹniej do identyfikatorĂłw tych przypisane byĹy obiekty liczb caĹkowitych, odpowiednio 1 i 0.
+
+ObsĹuga wyjÄtkĂłw
+Python udostÄpnia i intensywnie wykorzystuje obsĹugÄ wyjÄtkĂłw jako sposĂłb wykrywania bĹÄdĂłw.
+
+Styl programowania w Pythonie zaleca stosowanie wyjÄtkĂłw zawsze, gdy moĹźe pojawiÄ siÄ bĹÄd wykonania. Na przykĹad nie testuje siÄ praw dostÄpu do pliku przed jego otwarciem, lecz po prostu prĂłbuje siÄ go otworzyÄ, przechwytujÄc wyjÄtek w razie braku dostÄpu.
+
+Dekoratory
+W wersji 2.4 wprowadzono nowy element skĹadni â notacjÄ dekoratora. PrzykĹad: w starszych wersjach Pythona, by uzyskaÄ metodÄ statycznÄ klasy, naleĹźaĹo napisaÄ:
+
+class C:
+    def metoda(obj):
+        pass
+    metoda = staticmethod(metoda)
+Notacja dekoratora pozwala, bardziej czytelnie, umieĹciÄ informacjÄ o konwersji (dekoracji) przed definicjÄ funkcji:
+
+class C:
+    @staticmethod
+    def metoda(obj):
+        pass
+OgĂłlnie zapis:
+
+@dekorator
+def funkcja():
+    pass
+jest rĂłwnowaĹźny zapisowi:
+
+def funkcja():
+    pass
+funkcja = dekorator(funkcja)
+Biblioteka standardowa
+Python posiada rozbudowanÄ bibliotekÄ standardowÄ, umoĹźliwiajÄcÄ jego stosowanie do wielu zadaĹ. TwĂłrcy jÄzyka stosujÄ politykÄ tzw. Batteries Included, czyli dostarczenia wraz z pakietem instalacyjnym moĹźliwie duĹźej liczby narzÄdzi. ModuĹy standardowej biblioteki moĹźna uzupeĹniaÄ moduĹami pisanymi w C lub w Pythonie. Biblioteka standardowa jest szczegĂłlnie dobrze dostosowana do tworzenia aplikacji sieciowych, jako Ĺźe obsĹuguje znacznÄ liczbÄ standardowych formatĂłw i protokoĹĂłw (np. MIME, HTTP). DoĹÄczone sÄ takĹźe moduĹy do tworzenia GUI (na bazie Tcl/Tk), obrĂłbki wyraĹźeĹ regularnych, nawet prosty serwer WWW z obsĹugÄ CGI.
+
+WiÄksza czÄĹÄ biblioteki standardowej dostÄpna jest na wszystkich platformach, dziÄki czemu nawet duĹźe aplikacje mogÄ czÄsto byÄ uruchamiane bez koniecznoĹci modyfikacji na Uniksach, pod Windows, na Macintoshu i innych platformach. Przeciwnie, niĹź np. dla Javy, nie ogranicza siÄ zestawu dostÄpnych funkcji do czÄĹci wspĂłlnej dla rĂłĹźnych platform; np. na uniksach dostÄpna jest funkcja os.fork(), choÄ nie ma jej np. w Windows[8].
+
+Standardy dla bibliotek âzewnÄtrznychâ
+Podobnie, jak w wypadku innych jÄzykĂłw, opracowany zostaĹ szereg standardĂłw tworzenia API pomocniczego, np. sterownikĂłw relacyjnych baz danych. Ze wzglÄdu na w peĹni dynamiczny system typĂłw nie ma koniecznoĹci doĹÄczania do biblioteki standardowej âinterfejsu bazowegoâ, jak to ma miejsce np. w przypadku JDBC. TwĂłrca biblioteki zewnÄtrznej musi po prostu zapewniÄ, by stworzone przez niego moduĹy, funkcje i klasy posiadaĹy odpowiednie atrybuty.
+
+Inne cechy
+Interpreter Pythona posiada takĹźe tryb interaktywny, w ktĂłrym wyraĹźenia moĹźna wprowadzaÄ z terminala, otrzymujÄc natychmiast wyniki. Zgodnie z zaĹoĹźeniem twĂłrcĂłw Pythona uĹatwiaÄ ma to naukÄ programowania, gdyĹź pozwala wyprĂłbowywaÄ fragmenty kodu ze skutkiem natychmiastowym. Standardowy shell nie jest jednakĹźe zbyt wygodny ani nie posiada zbyt wielu funkcji (brak np. uzupeĹniania TAB-em) â brakĂłw tych jest pozbawiony IPython, bÄdÄcy czÄĹciÄ pakietu SciPy.
+
+Wraz z Pythonem rozpowszechniana jest takĹźe biblioteka unittest do testĂłw jednostkowych, pozwalajÄca na tworzenie wyczerpujÄcych testĂłw poprawnoĹci tworzonego oprogramowania [9].
+
+Zobacz teĹź
+	Zobacz w Wikibooks publikacjÄ
+Zanurkuj w Pythonie
+	W Wikimedia Commons znajdujÄ siÄ multimedia zwiÄzane z tematem:
+Python
+IronPython, Jython
+PyQt, PyGTK, wxPython, Tkinter, Pygame
+IDLE, eric3, Boa Constructor, Stani's Python Editor, Wing IDE
+Przypisy
+ Download Python _ Python.org (ang.). [dostÄp 2017-08-27].
+ Dave Kuhlman: A Python Book: Beginning Python, Advanced Python, and Python Exercises (ang.).  Cytat: Python is a high-level general purpose programming language
+ About Python (ang.). Python Software Foundation. [dostÄp 24 kwietnia 2012].
+ Mark Summerfield: Rapid GUI Programming with Python and Qt. Cytat: If you are new to Python: Welcome! You are about to discover a language that is clear to read and write, and that is concise without being cryptic.. (ang.)
+ Mark Summerfield: Rapid GUI Programming with Python and Qt. Cytat: Python is a very expressive language, which means that we can usually write far fewer lines of Python code than would be required for an equivalent application written in, say, C++ or Java.. (ang.)
+ Python Software Foundation: Whetting Your Appetite â Python v2.7.2 documentation (ang.). [dostÄp 2011-08-03].
+ Built-in Types.
+ Python Software Foundation: 16.1. os â Miscellaneous operating system interfaces (ang.). [dostÄp 07 marca 2017].  Cytat: os.fork() Fork a child process. [szczegĂłĹowy opis funkcji] Availability: Unix
+ Python Software Foundation: 26.4. unittest â Unit testing framework (ang.). [dostÄp 07 marca 2017].  Cytat: The unittest module provides a rich set of tools for constructing and running tests.
+Linki zewnÄtrzne
+http://python.org/ â Oficjalna strona Pythona
+http://python.rk.edu.pl â Biblioteka jÄzyka Python
+[pokaĹź]
+p â˘ d â˘ e
+JÄzyki programowania
+Kontrola autorytatywna (obiektowy jÄzyk programowania): LCCN:âsh96008834 GND:â4434275-5 BnF:â13560465c SUDOC:â051626225 WorldCat
+Kategorie: PythonJÄzyki skryptoweJÄzyki programowania maszyny wirtualnej Javy
+Menu nawigacyjne
+Nie jesteĹ zalogowanyDyskusjaEdycjeUtwĂłrz kontoZaloguj siÄArtykuĹDyskusjaCzytajEdytujEdytuj kod ĹşrĂłdĹowyHistoria i autorzySzukaj
+
+Przeszukaj WikipediÄ
+Strona gĹĂłwna
+Losuj artykuĹ
+Kategorie artykuĹĂłw
+Najlepsze artykuĹy
+CzÄste pytania (FAQ)
+Dla czytelnikĂłw
+O Wikipedii
+ZgĹoĹ bĹÄd
+Kontakt
+WspomĂłĹź WikipediÄ
+Dla wikipedystĂłw
+Pierwsze kroki
+Portal wikipedystĂłw
+OgĹoszenia
+Zasady
+Pomoc
+Ostatnie zmiany
+NarzÄdzia
+LinkujÄce
+Zmiany w linkowanych
+PrzeĹlij plik
+Strony specjalne
+Link do tej wersji
+Informacje o tej stronie
+Element Wikidanych
+Cytowanie tego artykuĹu
+Drukuj lub eksportuj
+UtwĂłrz ksiÄĹźkÄ
+Pobierz jako PDF
+Wersja do druku
+W innych projektach
+Wikimedia Commons
+Wikibooks
+
+W innych jÄzykach
+Afrikaans
+Alemannisch
+Ř§ŮŘšŘąŘ¨ŮŘŠ
+AragonĂŠs
+ŕŚŕŚ¸ŕŚŽŕ§ŕŚŻŕŚźŕŚž
+Asturianu
+AzÉrbaycanca
+ŘŞŰŘąÚŠŘŹŮ
+ŕŚŹŕŚžŕŚŕŚ˛ŕŚž
+BĂ˘n-lĂ˘m-gĂş
+ĐĐľĐťĐ°ŃŃŃĐşĐ°Ń
+ĐŃĐťĐłĐ°ŃŃĐşĐ¸
+Bosanski
+CatalĂ
+Cebuano
+ÄeĹĄtina
+Dansk
+Deutsch
+Eesti
+ÎÎťÎťÎˇÎ˝ÎšÎşÎŹ
+English
+EspaĂąol
+Esperanto
+Euskara
+ŮŘ§ŘąŘłŰ
+FranĂ§ais
+Galego
+ŕŞŕŤŕŞŕŞ°ŕŞžŕŞ¤ŕŤ
+íęľ­ě´
+ŐŐĄŐľŐĽÖŐĽŐś
+ŕ¤šŕ¤żŕ¤¨ŕĽŕ¤ŚŕĽ
+Hrvatski
+Bahasa Indonesia
+Interlingua
+Ăslenska
+Italiano
+×˘××¨××Ş
+áĽáá ááŁáá
+ŇĐ°ĐˇĐ°ŇŃĐ°
+Latina
+LatvieĹĄu
+LietuviĹł
+La .lojban.
+Lumbaart
+Magyar
+ĐĐ°ĐşĐľĐ´ĐžĐ˝ŃĐşĐ¸
+ŕ´Žŕ´˛ŕ´Żŕ´žŕ´łŕ´
+ŕ¤Žŕ¤°ŕ¤žŕ¤ ŕĽ
+Bahasa Melayu
+ĐĐžĐ˝ĐłĐžĐť
+ááźááşááŹááŹááŹ
+Nederlands
+ŕ¤¨ŕĽŕ¤Şŕ¤žŕ¤˛ŕĽ
+ćĽćŹčŞ
+Norsk
+Norsk nynorsk
+ŕŹŕŹĄŕŹźŕŹżŕŹ
+OĘťzbekcha/ŃĐˇĐąĐľĐşŃĐ°
+ŮžŮŘŹŘ§Ř¨Ű
+ááśááśááááá
+PlattdĂźĂźtsch
+PortuguĂŞs
+RomĂ˘nÄ
+Đ ŃŃŃĐşĐ¸Đš
+Scots
+Shqip
+ŕˇŕˇŕśŕˇŕś˝
+Simple English
+SlovenÄina
+SlovenĹĄÄina
+ÚŠŮŘąŘŻŰ
+ĐĄŃĐżŃĐşĐ¸ / srpski
+Srpskohrvatski / ŃŃĐżŃĐşĐžŃŃĐ˛Đ°ŃŃĐşĐ¸
+Suomi
+Svenska
+Tagalog
+ŕŽ¤ŕŽŽŕŽżŕŽ´ŕŻ
+ŕ°¤ŕąŕ°˛ŕąŕ°ŕą
+ŕšŕ¸ŕ¸˘
+Đ˘ĐžŇˇĐ¸ĐşÓŁ
+TĂźrkĂ§e
+á¨á¨ á¨á¨á¨á¨
+ĐŁĐşŃĐ°ŃĐ˝ŃŃĐşĐ°
+Ř§ŘąŘŻŮ
+Tiáşżng Viáťt
+ĺ´čŻ­
+ç˛ľčŞ
+ä¸­ć
+Edytuj linki
+TÄ stronÄ ostatnio edytowano 3 kwi 2018, 16:09.
+Tekst udostÄpniany na licencji Creative Commons: uznanie autorstwa, na tych samych warunkach, z moĹźliwoĹciÄ obowiÄzywania dodatkowych ograniczeĹ. Zobacz szczegĂłĹowe informacje o warunkach korzystania.
+Polityka ochrony prywatnoĹciO WikipediiKorzystasz z Wikipedii tylko na wĹasnÄ odpowiedzialnoĹÄDla deweloperĂłwKomunikat na temat ciasteczekWersja dla urzÄdzeĹ mobilnychWikimedia Foundation Powered by MediaWiki
